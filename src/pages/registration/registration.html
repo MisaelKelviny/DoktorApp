@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CADASTRAR</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="person" class="iconInput"></ion-icon>
+        </ion-label>
+        <ion-input type="text" placeholder="LOGIN" [(ngModel)]="login"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="lock" class="iconInput"></ion-icon>
+        </ion-label>
+        <ion-input type="text" *ngIf="showPwd" [(ngModel)]="passwd" placeholder="SENHA"></ion-input>
+        <ion-input type="password" *ngIf="!showPwd" [(ngModel)]="passwd" placeholder="SENHA"></ion-input>
+        <button icon-only ion-button clear type="button" item-right (click)="showPwd=!showPwd">
+          <ion-icon class="bgBlack" *ngIf="showPwd" name="eye"></ion-icon>
+          <ion-icon class="bgBlack" *ngIf="!showPwd" name="eye-off"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row align-items-center>
+    <ion-col col-12 text-center justify-content-center align-self-center>
+      <button (click)="cadastrar(login, passwd)" color="secondary" round ion-button>
+        CADASTRAR
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

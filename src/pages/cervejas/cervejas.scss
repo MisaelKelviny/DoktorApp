@@ -1,0 +1,100 @@
+page-cervejas {
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
+
+  .toolbar-title-md {
+    color: black !important;
+    font-weight: 800 !important;
+    font-size: 2.5rem;
+    position: absolute;
+    text-align: center;
+  }
+  .toolbar-title-ios {
+    color: black !important;
+    font-weight: 800 !important;
+    font-size: 2.5rem;
+    position: absolute;
+    text-align: center;
+  }
+  .item-md {
+    background-color: transparent !important;
+    padding: 0px;
+  }
+  .item-md.item-block .item-inner {
+    border: none !important;
+    padding: 0px;
+  }
+  .range-md .range-knob-min.range-knob-min .range-knob {
+    background: url("../../assets/folhaRange.png") 100% 100% no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    position: static;
+    border: none;
+  }
+  .range-md .range-bar-active {
+  }
+  .subtitle {
+    font-size: 20px;
+    margin: 0px;
+    font-weight: lighter;
+  }
+  .range-md .range-knob {
+    background: url("../../assets/folhaRange.png") 100% 100% no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    position: static;
+    border: none;
+  }
+  .range-md .range-bar {
+    // background-color: white !important;
+  }
+  .footer-md::before {
+    background: none;
+  }
+  .footerButton {
+    width: 100%;
+    text-align: justify;
+    justify-content: space-between;
+    display: flex;
+  }
+  .item-range ion-range {
+    width: 90% !important;
+    margin: 0px;
+    padding: 0px;
+  }
+  .last{
+    white-space: normal;
+    width: 40px;
+    text-align: center;
+  }
+  .toolbar-content-md {
+    display: flex;
+    justify-content: center;
+  }
+  .toolbar-content-ios {
+    display: flex;
+    justify-content: center;
+  }
+  .size10 {
+    font-size: 12px;
+  }
+  .button-inner {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .titlesRange {
+    width: 100%;
+    text-align: justify;
+    justify-content: space-between;
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+  }
+}

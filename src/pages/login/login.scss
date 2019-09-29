@@ -1,0 +1,99 @@
+page-login {
+  //   ion-input {
+  //     border: 1px solid #1e1d20;
+  //     border-radius: 10px;
+  //     padding-left: 10px !important;
+  //   }
+  .label-md[stacked],
+  .label-md[floating] {
+    margin-left: 10px !important;
+    margin-bottom: -2px !important;
+  }
+  .input-has-focus .item-input-has-focus {
+    border: none !important;
+  }
+  .item-md.item-block .item-inner {
+    border: none !important;
+    padding-right: 0px;
+  }
+  .item .item-block .item-md .item-input .item-label-floating .input-has-focus .item-input-has-focus {
+    border: none !important;
+  }
+  .input-has-focus .input-cover {
+    display: none;
+  }
+
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .list-md .item-input.input-has-focus:last-child .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .iconInput {
+    background-color: #1e1d20 !important;
+    color: #d8c32c !important;
+    margin-right: 10px !important;
+    width: 30px;
+    text-align: center;
+    height: 20px;
+  }
+
+  ion-item {
+    background-color: transparent !important;
+  }
+  ion-label {
+    color: black !important;
+    margin: 0px !important;
+    margin-left: 10px !important;
+  }
+
+  .bgBlack{
+      color: black;
+  }
+
+  ::placeholder{
+    color: black !important;
+  }
+  .item {
+    padding-left: 0px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+  .logoBrau {
+    width: 70%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-row>
+          <ion-col col-12 justify-content-center text-center>
+            <img class="logoBrau" src="../../assets/dktrbrau1.png">
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person" class="iconInput"></ion-icon>
+              </ion-label>
+              <ion-input type="text" placeholder="LOGIN" [(ngModel)]="login"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="lock" class="iconInput"></ion-icon>
+              </ion-label>
+              <ion-input type="text" *ngIf="showPwd" [(ngModel)]="passwd" placeholder="SENHA"></ion-input>
+              <ion-input type="password" *ngIf="!showPwd" [(ngModel)]="passwd" placeholder="SENHA"></ion-input>
+              <button icon-only ion-button clear type="button" item-right (click)="showPwd=!showPwd">
+                <ion-icon class="bgBlack" *ngIf="showPwd" name="eye"></ion-icon>
+                <ion-icon class="bgBlack" *ngIf="!showPwd" name="eye-off"></ion-icon>
+              </button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row align-items-center>
+          <ion-col col-12 text-center justify-content-center align-self-center>
+            <button (click)="LoginComEmail()" color="secondary" round ion-button>
+              ENTRAR
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 margin-bottom margin-top>
+            <div (click)="register()" text-center>
+              CADASTRE-SE
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div text-center>
+              <button ion-button full>
+                <ion-icon name="logo-facebook" padding-right></ion-icon>
+                Entrar com o Facebook
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <div text-center class="forgotPassword">
+              ESQUECI MINHA SENHA
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

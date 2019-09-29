@@ -1,0 +1,51 @@
+page-home {
+  .contentBack {
+    background: url(../../assets/sobrau.png) 100% 100% no-repeat;
+    background-attachment: initial;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: #d9c42d;
+    width: 100%;
+    background-clip: padding-box;
+    height: 100%;
+    opacity: 0.2;
+    background-position-x: -300px;
+    background-position-y: 20px;
+    background-origin: padding-box;
+    position: absolute;
+    scroll-behavior: unset;
+    overflow: hidden;
+  }
+  
+  .firstAbove{
+    transform: translate(0px, 30px);
+  }
+
+  .centerAbove{
+    transform: translate(0px, 30px);
+  }
+
+  .downAbove{
+    transform: translate(0px, -30px);
+  }
+
+  ion-grid{
+    height: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .tampa{
+      width: 80px;
+      align-self: center;
+      display: flex;
+      margin: 0 auto;
+  }
+  .tampao{
+    width: 120px;
+    align-self: center;
+    display: flex;
+    margin: 0 auto;
+  }
+}
