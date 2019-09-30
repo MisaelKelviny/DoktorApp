@@ -9,14 +9,12 @@ page-cervejas {
   .toolbar-title-md {
     color: black !important;
     font-weight: 800 !important;
-    font-size: 2.5rem;
     position: absolute;
     text-align: center;
   }
   .toolbar-title-ios {
     color: black !important;
     font-weight: 800 !important;
-    font-size: 2.5rem;
     position: absolute;
     text-align: center;
   }
@@ -36,7 +34,11 @@ page-cervejas {
     position: static;
     border: none;
   }
-  .range-md .range-bar-active {
+  .range-md .range-bar{
+    background: white;
+  }
+  .range-ios .range-bar{
+    background: white;
   }
   .subtitle {
     font-size: 20px;
@@ -50,9 +52,6 @@ page-cervejas {
     width: 100%;
     position: static;
     border: none;
-  }
-  .range-md .range-bar {
-    // background-color: white !important;
   }
   .footer-md::before {
     background: none;
@@ -68,7 +67,7 @@ page-cervejas {
     margin: 0px;
     padding: 0px;
   }
-  .last{
+  .last {
     white-space: normal;
     width: 40px;
     text-align: center;
@@ -84,8 +83,12 @@ page-cervejas {
   .size10 {
     font-size: 12px;
   }
-  .button-inner {
+  span.button-inner {
     font-size: 10px;
+    font-weight: bold;
+  }
+  button.brauButton span.button-inner {
+    font-size: 20px;
     font-weight: bold;
   }
   .titlesRange {

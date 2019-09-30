@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, MenuController, Keyboard } from 'ionic-angular';
+import { Nav, MenuController, Keyboard, App, Platform, AlertController } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -22,10 +22,13 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
-  pages: Array<{ title: string, component: any, icon:string}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
-  constructor(public firebaseauth: AngularFireAuth, 
-    public menuCtrl: MenuController, 
+  constructor(public firebaseauth: AngularFireAuth,
+    public menuCtrl: MenuController,
+    public app: App,
+    public platform: Platform,
+    public alertCtrl: AlertController,
     public load: LoadingProvider) {
     // this.initializeApp();
 
@@ -39,6 +42,40 @@ export class MyApp {
       { title: 'QR-Code', component: QrcodePage, icon: "qr-scanner" },
       { title: 'Rádio', component: RadioPage, icon: "radio" },
     ];
+
+
+
+    this.platform.registerBackButtonAction(() => {
+      // Catches the active view
+      let nav = this.app.getActiveNavs()[0];
+      let activeView = nav.getActive();
+      // Checks if can go back before show up the alert
+      if (activeView.name === 'HomePage') {
+        if (nav.canGoBack()) {
+          nav.pop();
+        } else {
+          const alert = this.alertCtrl.create({
+            title: 'Fechar o App',
+            message: 'Você tem certeza?',
+            buttons: [{
+              text: 'Cancelar',
+              role: 'cancel',
+              handler: () => {
+                this.nav.setRoot('HomePage');
+                console.log('** Saída do App Cancelada! **');
+              }
+            }, {
+              text: 'Fechar o App',
+              handler: () => {
+                this.sair();
+                this.platform.exitApp();
+              }
+            }]
+          });
+          alert.present();
+        }
+      }
+    });
   }
 
   // initializeApp() {

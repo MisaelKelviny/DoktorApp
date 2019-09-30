@@ -1,3 +1,51 @@
 page-acompanhamento {
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
 
+  .size12{
+      font-size: 12px;
+  }
+  .bannerReceita{
+      background: url('../../assets/imgs/carneCordeiro.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 300px;
+      width: 100%;
+      position: relative;
+      top: -30px;
+  }
+  .subtitle{
+      margin: 0px;
+      padding: 0px;
+  }
+  .see{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+  }
+  .arrow{
+    position: absolute;
+    top: 41%;
+    right: 28%;
+    background: url(../../assets/imgs/arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 120px;
+    z-index: 9999;
+  }
+  ion-searchbar{
+    width: 84%;
+    float: right;
+    justify-content: end;
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
 }

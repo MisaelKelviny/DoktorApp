@@ -1,8 +1,8 @@
 <ion-header no-border>
-  <ion-navbar>
-    <button class="brauButton" ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <button class="brauButton" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-navbar hideBackButton>
     <ion-title>AMARGOR</ion-title>
   </ion-navbar>
 </ion-header>
@@ -86,13 +86,13 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button small color="light">
+    <button #botao ion-button small color="light">
       COMPRAR
     </button>
-    <button ion-button small color="light">
+    <button #botao ion-button small color="light">
       ACOMPANHAMENTOS
     </button>
-    <button ion-button small color="light">
+    <button #botao ion-button small color="light">
       CERVEJEIROS
     </button>
   </ion-toolbar>

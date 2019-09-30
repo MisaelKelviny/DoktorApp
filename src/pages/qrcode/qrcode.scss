@@ -1,3 +1,9 @@
 page-qrcode {
-
+    .qrImage{
+        display: grid;
+        margin: 0 auto;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+    }
 }

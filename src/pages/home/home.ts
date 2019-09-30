@@ -24,22 +24,22 @@ export class HomePage {
 
   openPage(page){
     if(page == "Cervejas"){
-      this.navCtrl.setRoot(CervejasPage);
+      this.navCtrl.push(CervejasPage);
     }
     if(page == "Acompanhamento"){
-      this.navCtrl.setRoot(AcompanhamentoPage);
+      this.navCtrl.push(AcompanhamentoPage);
     }
     if(page == "Cervejeiros"){
-      this.navCtrl.setRoot(CervejeirosPage);
+      this.navCtrl.push(CervejeirosPage);
     }
     if(page == "Rádio"){
-      this.navCtrl.setRoot(RadioPage);
+      this.navCtrl.push(RadioPage);
     }
     if(page == "QR-Code"){
-      this.navCtrl.setRoot(QrcodePage);
+      this.navCtrl.push(QrcodePage);
     }
     if(page == "Comprar"){
-      this.navCtrl.setRoot(ListPage);
+      this.navCtrl.push(ListPage);
     }
   }
 

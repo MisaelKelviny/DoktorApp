@@ -85,4 +85,13 @@ ion-icon[class^="fa-"] {
   font-size: 20px !important;
   box-shadow: none;
   position: absolute;
+  z-index: 9999;
+}
+span.button-inner {
+  font-size: 10px;
+  font-weight: bold;
+}
+button.brauButton span.button-inner {
+  font-size: 20px;
+  font-weight: bold;
 }

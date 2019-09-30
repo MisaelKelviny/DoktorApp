@@ -1,3 +1,33 @@
 page-radio {
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
 
+  .toolbar-title-md {
+    color: black !important;
+    font-weight: 800 !important;
+    position: absolute;
+    text-align: center;
+  }
+  .toolbar-title-ios {
+    color: black !important;
+    font-weight: 800 !important;
+    position: absolute;
+    text-align: center;
+  }
+  .item-md {
+    background-color: transparent !important;
+    padding: 0px;
+  }
+  .toolbar-content-md {
+    display: flex;
+    justify-content: center;
+  }
+  .toolbar-content-ios {
+    display: flex;
+    justify-content: center;
+  }
 }
