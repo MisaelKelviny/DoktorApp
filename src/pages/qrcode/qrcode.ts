@@ -36,36 +36,29 @@ export class QrcodePage {
   }
 
   doScan() {
-    // Optionally request the permission early
-    console.log('QR: Trying to scan...')
     this.qrScanner.prepare()
-    .then((status: QRScannerStatus) => {
-      if (status.authorized) {
-        // camera permission was granted
-        console.log('QR: Camera Permission Given');
- 
-        // start scanning
-        this.scanSub = this.qrScanner.scan().subscribe((text: any) => {
-          console.log('QR: Scanned something', text);
-          this.scannedText = text.result;
-          this.stopScan();
-        });
- 
-        //this.qrScanner.show();
-        console.log('QR: Scanner scanning');
-      } else if (status.denied) {
-        // camera permission was permanently denied
-        // you must use QRScanner.openSettings() method to guide the user to the settings page
-        // then they can grant the permission from there
-        console.log('QR: Camera permission denied FOREVER');
-      } else {
-        // permission was denied, but not permanently. You can ask for permission again at a later time.
-        console.log('QR: Camera permission denied this time');
-      }
-    })
-    .catch((e: any) => {
-      console.log('QR: Error is', e)
-    });
+      .then((status: QRScannerStatus) => {
+        if (status.authorized) {
+          // camera permission was granted
+
+
+          // start scanning
+          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
+            console.log('Scanned something', text);
+
+            this.qrScanner.hide(); // hide camera preview
+            scanSub.unsubscribe(); // stop scanning
+          });
+
+        } else if (status.denied) {
+          // camera permission was permanently denied
+          // you must use QRScanner.openSettings() method to guide the user to the settings page
+          // then they can grant the permission from there
+        } else {
+          // permission was denied, but not permanently. You can ask for permission again at a later time.
+        }
+      })
+      .catch((e: any) => console.log('Error is', e));
   }
 
   ionViewWillLeave() {

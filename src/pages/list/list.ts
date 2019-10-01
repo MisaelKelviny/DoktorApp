@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { LoadedModule } from 'ionic-angular/umd/util/module-loader';
 import { LoadingProvider } from '../../providers/loading/loading';
 
 @Component({
@@ -79,7 +78,8 @@ export class ListPage {
       cerveja: "WEISS",
       type: "garrafa",
       url: "../../assets/garrafa-weiss.png"
-    },]
+    },
+  ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public load: LoadingProvider) {
 
