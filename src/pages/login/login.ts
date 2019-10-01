@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, ModalController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ModalController, AlertController, Platform } from 'ionic-angular';
 import { user } from '../../user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RegistrationPage } from '../registration/registration';
@@ -34,7 +34,8 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public modal: ModalController,
     public load: LoadingProvider,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public platform: Platform
   ) {
   }
 

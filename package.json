@@ -33,7 +33,7 @@
     "angularfire2": "^5.0.0-rc.6",
     "firebase": "^5.1.0",
     "font-awesome": "^4.7.0",
-    "ionic-angular": "3.9.2",
+    "ionic-angular": "^3.9.5-201905161949",
     "ionicons": "3.0.0",
     "ngx-error": "0.0.1",
     "promise-polyfill": "^8.1.3",

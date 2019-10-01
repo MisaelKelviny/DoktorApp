@@ -20,6 +20,7 @@ import { RegistrationPageModule } from '../pages/registration/registration.modul
 import { LoginPageModule } from '../pages/login/login.module';
 import { RadioProvider } from '../providers/radio/radio';
 import { QrScanProvider } from '../providers/qr-scan/qr-scan';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
@@ -40,7 +41,9 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     LoginPageModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      navExitApp: false
+    }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     NgxErrorsModule,
@@ -56,13 +59,15 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     LoginPage,
+    ListPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
     LoadingProvider,
     RadioProvider,
-    QrScanProvider
+    QrScanProvider,
+    QRScanner
   ]
 })
 export class AppModule { }

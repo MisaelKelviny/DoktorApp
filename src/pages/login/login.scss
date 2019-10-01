@@ -69,7 +69,10 @@ page-login {
     text-align: center;
     height: 20px;
   }
-
+  span.button-inner {
+    font-size: 14px;
+    font-weight: bold;
+  }
   ion-item {
     background-color: transparent !important;
   }

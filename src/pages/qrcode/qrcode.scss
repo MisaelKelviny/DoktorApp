@@ -1,9 +1,15 @@
 page-qrcode {
-    .qrImage{
-        display: grid;
-        margin: 0 auto;
-        align-items: center;
-        width: 70%;
-        height: 100%;
-    }
+  .qrImage {
+    display: grid;
+    margin: 0 auto;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+  }
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
 }

@@ -73,8 +73,8 @@ export class QrcodePage {
     this.stopScan();
   }
 
-  ionViewDidEnter(){
-    this.showCamera();
-    this.doScan();
-  }
+  // ionViewDidEnter(){
+  //   this.showCamera();
+  //   this.doScan();
+  // }
 }

@@ -1,3 +1,40 @@
 page-list {
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
+  ion-searchbar {
+    width: 84%;
+    float: right;
+    justify-content: end;
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
 
+  .imgLista{
+      width: 120px;
+  }
+
+  .d-flex-justify-space-evenly{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  ion-img{
+    display: inline-block;
+    min-width: 20px;
+    min-height: 200px !important;
+    background: transparent !important;
+  }
+  span.button-inner{
+      font-size: 15px;
+  }
+  .input-20{
+    width: 20px !important; 
+    height: 20px !important;
+  }
 }

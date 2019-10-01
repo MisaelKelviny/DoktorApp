@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { CervejasPage } from '../cervejas/cervejas';
 import { AcompanhamentoPage } from '../acompanhamento/acompanhamento';
@@ -14,31 +14,45 @@ import { ListPage } from '../list/list';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,public load:LoadingProvider) {
+  public unsubscribeBackEvent: any;
+
+  constructor(public navCtrl: NavController, public platform: Platform, public load: LoadingProvider) {
     this.load.hide();
   }
 
-  ionViewWillEnter(){
+  ionViewDidLoad() {
+    this.initializeBackButtonCustomHandler();
   }
 
+  ionViewWillLeave() {
+    this.unsubscribeBackEvent && this.unsubscribeBackEvent();
 
-  openPage(page){
-    if(page == "Cervejas"){
+    history.pushState(null, null, document.URL);
+    console.log("leave home ,add pushState");
+  }
+
+  initializeBackButtonCustomHandler(): void {
+    this.unsubscribeBackEvent = this.platform.registerBackButtonAction(function (event) {
+    }, 101);
+  }
+
+  openPage(page) {
+    if (page == "Cervejas") {
       this.navCtrl.push(CervejasPage);
     }
-    if(page == "Acompanhamento"){
+    if (page == "Acompanhamento") {
       this.navCtrl.push(AcompanhamentoPage);
     }
-    if(page == "Cervejeiros"){
+    if (page == "Cervejeiros") {
       this.navCtrl.push(CervejeirosPage);
     }
-    if(page == "Rádio"){
+    if (page == "Rádio") {
       this.navCtrl.push(RadioPage);
     }
-    if(page == "QR-Code"){
+    if (page == "QR-Code") {
       this.navCtrl.push(QrcodePage);
     }
-    if(page == "Comprar"){
+    if (page == "Comprar") {
       this.navCtrl.push(ListPage);
     }
   }

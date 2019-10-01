@@ -30,9 +30,8 @@ export class MyApp {
     public platform: Platform,
     public alertCtrl: AlertController,
     public load: LoadingProvider) {
-    // this.initializeApp();
+    this.initializeApp();
 
-    // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: HomePage, icon: "home" },
       { title: 'Comprar', component: ListPage, icon: "cart" },
@@ -42,50 +41,51 @@ export class MyApp {
       { title: 'QR-Code', component: QrcodePage, icon: "qr-scanner" },
       { title: 'Rádio', component: RadioPage, icon: "radio" },
     ];
+  }
 
+  initializeApp() {
+
+    window.addEventListener('popstate', () => {
+      if (this.nav.canGoBack()) { //Can we go back?
+        if (this.nav.length() > 2) { history.pushState(null, null, document.URL); }
+        this.nav.pop();
+      }
+    });
 
 
     this.platform.registerBackButtonAction(() => {
-      // Catches the active view
+
       let nav = this.app.getActiveNavs()[0];
       let activeView = nav.getActive();
-      // Checks if can go back before show up the alert
-      if (activeView.name === 'HomePage') {
+
+      if (activeView.component.name === "HomePage") {
         if (nav.canGoBack()) {
           nav.pop();
         } else {
-          const alert = this.alertCtrl.create({
-            title: 'Fechar o App',
-            message: 'Você tem certeza?',
-            buttons: [{
-              text: 'Cancelar',
-              role: 'cancel',
-              handler: () => {
-                this.nav.setRoot('HomePage');
-                console.log('** Saída do App Cancelada! **');
+          let alert = this.alertCtrl.create({
+            title: 'Exit Application?',
+            message: 'Do you want to exit the application?',
+            buttons: [
+              {
+                text: 'Cancel',
+                role: 'cancel',
+                handler: () => {
+                  console.log('Cancel clicked');
+                }
+              },
+              {
+                text: 'Exit',
+                handler: () => {
+                  console.log('Exit clicked');
+                }
               }
-            }, {
-              text: 'Fechar o App',
-              handler: () => {
-                this.sair();
-                this.platform.exitApp();
-              }
-            }]
+            ]
           });
           alert.present();
         }
       }
     });
   }
-
-  // initializeApp() {
-  //   this.platform.ready().then(() => {
-  //     // Okay, so the platform is ready and our plugins are available.
-  //     // Here you can do any higher level native things you might need.
-  //     this.statusBar.styleDefault();
-  //     this.splashScreen.hide();
-  //   });
-  // }
 
   public sair(): void {
     this.load.show();

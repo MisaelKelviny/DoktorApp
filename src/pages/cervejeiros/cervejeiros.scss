@@ -1,3 +1,21 @@
 page-cervejeiros {
+  .toolbar-background-md {
+    background-color: transparent !important;
+  }
+  .toolbar-background-ios {
+    background-color: transparent !important;
+  }
 
+  .toolbar-title-md {
+    color: black !important;
+    font-weight: 800 !important;
+    position: absolute;
+    text-align: center;
+  }
+  .toolbar-title-ios {
+    color: black !important;
+    font-weight: 800 !important;
+    position: absolute;
+    text-align: center;
+  }
 }

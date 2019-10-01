@@ -1,23 +1,35 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
+<ion-header no-border>
+  <button class="brauButton" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-navbar hideBackButton>
+    <ion-searchbar placeholder="Procure aqui sua cerveja..." (ionInput)="getItems($event)"></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let ber of doktorBeer;let i = index" col-6 text-center >
+        <div>
+          <p><strong>{{ber.cerveja}}</strong></p>
+          <div *ngIf="ber.type == 'garrafa'" class="d-flex-justify-space-evenly">
+            <input class="input-20" type="radio" id="300" name="option{{i}}" value="300">
+            <label for="huey">300ml</label>
+            <input class="input-20" type="radio" id="500" name="option{{i}}" value="500">
+            <label for="huey">500ml</label>
+          </div>
+        </div>
+        <div>
+          <!-- <ion-img class="imgLista" [src]="ber.url"></ion-img> -->
+          <img src="{{ber.url}}" class="imgLista">
+        </div>
+        <div>
+          <button ion-button color="secondary">
+            COMPRAR
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
