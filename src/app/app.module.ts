@@ -21,6 +21,7 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { RadioProvider } from '../providers/radio/radio';
 import { QrScanProvider } from '../providers/qr-scan/qr-scan';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { StarRatingModule } from 'ionic3-star-rating';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
@@ -40,6 +41,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    StarRatingModule,
     LoginPageModule,
     IonicModule.forRoot(MyApp, {
       navExitApp: false

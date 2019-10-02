@@ -26,6 +26,7 @@ export class LoginPage {
   user: user[] = [];
   passwd: string = "";
   login: string = "";
+  userName: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -55,7 +56,8 @@ export class LoginPage {
       this.load.hide();
     }else{ 
       this.firebaseauth.auth.signInWithEmailAndPassword(this.login, this.passwd)
-      .then(() => {
+      .then((data) => {
+        console.log(data);
         this.navCtrl.setRoot(HomePage);
       })
       .catch((erro: any) => {
@@ -70,7 +72,8 @@ export class LoginPage {
     profileModal.present();
 
     profileModal.onDidDismiss(data => {
-      console.log(data);
+      this.userName = data.user.email;
+      console.log(this.userName);
       this.cadastrarUsuario(data.mail, data.password);
     });
   }

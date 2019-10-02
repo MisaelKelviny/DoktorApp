@@ -1,18 +1,65 @@
-<!--
-  Generated template for the CervejeirosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>cervejeiros</ion-title>
+<ion-header no-border>
+  <button class="brauButton" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-navbar hideBackButton>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <h1 text-center>Cervejeiros</h1>
+  <ion-slides>
+    <ion-slide class="d-inline" *ngFor="let com of data;let i = index">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <ion-img class="beerStar" [src]="com.beerUrl"></ion-img>
+          </ion-col>
+          <ion-col col-8 justify-content-start text-left>
+            <h3>{{com.name}}</h3>
+            <div>
+              <div>
+                <ion-icon *ngFor="let item of [].constructor(com.rating);" name="star"></ion-icon>
+              </div>
+              <div>
+                <p *ngIf="com.rating == 1">BOM</p>
+                <p *ngIf="com.rating == 2">MUITO BOM</p>
+                <p *ngIf="com.rating == 3">GOSTEI</p>
+                <p *ngIf="com.rating == 4">GOSTEI MUITO</p>
+                <p *ngIf="com.rating == 5">EXCELENTE</p>
+              </div>
+              <div>
+                <small>
+                  <ion-icon name="chatbubbles" color="light"></ion-icon>
+                  <strong>{{com.username}}</strong> {{com.userComment}}
+                </small>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="ratingBeer">
+      <p>AVALIAR: </p>
+      <ionic3-star-rating #rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#ffffff"
+        defaultColor="#f4f4f4" readonly="false" rating="3" fontSize="32px" (ratingChanged)="logRatingChange($event)">
+      </ionic3-star-rating>
+    </div>
+    <ion-item class="w-80 mb-10">
+      <ion-input type="text" placeholder="Deixe seu comentário" [(ngModel)]="coment"></ion-input>
+    </ion-item>
+    <ion-fab bottom right>
+      <button ion-fab color="secondary">
+        <ion-icon name="paper-plane"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-footer>

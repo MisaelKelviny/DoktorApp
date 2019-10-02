@@ -6,16 +6,38 @@ page-cervejeiros {
     background-color: transparent !important;
   }
 
-  .toolbar-title-md {
-    color: black !important;
-    font-weight: 800 !important;
-    position: absolute;
-    text-align: center;
+  .ratingBeer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
   }
-  .toolbar-title-ios {
-    color: black !important;
-    font-weight: 800 !important;
-    position: absolute;
-    text-align: center;
+  .w-80 {
+    width: 80% !important;
+  }
+  .mb-10 {
+    margin-bottom: 10px !important;
+    border-radius: 20px;
+  }
+  .d-inline{
+    display: inline;
+  }
+
+  ion-searchbar {
+    width: 84%;
+    float: right;
+    justify-content: end;
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
+
+  strong {
+    color: blue;
+  }
+  .beerStar {
+    width: 100% !important;
+    height: 200px !important;
+    background: transparent;
+    background-position: center;
   }
 }
