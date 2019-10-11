@@ -95,3 +95,35 @@ button.brauButton span.button-inner {
   font-size: 20px;
   font-weight: bold;
 }
+
+input.searchbar-input {
+  background-color: #d9c42d !important;
+  color: white;
+  box-shadow: none !important;
+  border-bottom: 1px solid white;
+}
+
+input.searchbar-md.searchbar-input {
+  box-shadow: none !important;
+}
+
+input::placeholder {
+  color: white !important;
+}
+input::placeholder {
+  color: black;
+}
+
+.searchBarDoktor {
+  box-shadow: none !important;
+}
+
+.searchbar-md .searchbar-search-icon{
+  background-image: none;
+}
+.searchbar-md .searchbar-search-icon::before {
+  font-family: "FontAwesome";
+  content: "\f002";
+  color: white;
+  font-size: 15px;
+}

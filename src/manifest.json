@@ -5,22 +5,10 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "assets/imgs/brau192x192image.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
       "src": "assets/imgs/brau192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
-    },
-    {
-      "src": "assets/imgs/brau512x512image.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable any"
     },
     {
       "src": "assets/imgs/brau512x512.png",

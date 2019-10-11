@@ -40,6 +40,7 @@ export class MyApp {
       { title: 'Acompanhamentos', component: AcompanhamentoPage, icon: "pizza" },
       { title: 'QR-Code', component: QrcodePage, icon: "qr-scanner" },
       { title: 'Rádio', component: RadioPage, icon: "radio" },
+      { title: 'Créditos', component: QrcodePage, icon: "book" },
     ];
   }
 
@@ -88,16 +89,14 @@ export class MyApp {
   }
 
   public sair(): void {
-    this.load.show();
     this.firebaseauth.auth.signOut()
       .then(() => {
+        console.log("sair");        
         this.menuCtrl.close();
         this.nav.setRoot(LoginPage);
-        this.load.hide();
       })
       .catch((erro: any) => {
         console.log(erro);
-        this.load.hide();
       });
   }
 

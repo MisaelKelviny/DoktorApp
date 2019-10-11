@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { HTTP } from '@ionic-native/http/ngx';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -22,6 +22,8 @@ import { RadioProvider } from '../providers/radio/radio';
 import { QrScanProvider } from '../providers/qr-scan/qr-scan';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { StarRatingModule } from 'ionic3-star-rating';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
@@ -43,6 +45,7 @@ export const firebaseConfig = {
     BrowserModule,
     StarRatingModule,
     LoginPageModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       navExitApp: false
     }),
@@ -54,6 +57,7 @@ export const firebaseConfig = {
     AcompanhamentoPageModule,
     QrcodePageModule,
     RadioPageModule,
+    HttpClientModule, 
     RegistrationPageModule,
   ],
   bootstrap: [IonicApp],
@@ -68,6 +72,7 @@ export const firebaseConfig = {
     LoginProvider,
     LoadingProvider,
     RadioProvider,
+    HTTP,
     QrScanProvider,
     QRScanner
   ]

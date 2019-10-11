@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { ListPage } from '../list/list';
+import { CervejeirosPage } from '../cervejeiros/cervejeiros';
+import { AcompanhamentoPage } from '../acompanhamento/acompanhamento';
 
 /**
  * Generated class for the CervejasPage page.
@@ -36,5 +39,17 @@ export class CervejasPage {
   setLabel(value){
     console.log(value);
     this.slides.slideTo(value);
+  }
+
+  openComprar(){
+    this.navCtrl.push(ListPage)
+  }
+
+  openCervejeiro(){
+    this.navCtrl.push(CervejeirosPage)
+  }
+
+  openAcompanhamento(){
+    this.navCtrl.push(AcompanhamentoPage)
   }
 }

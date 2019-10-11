@@ -30,4 +30,31 @@ page-radio {
     display: flex;
     justify-content: center;
   }
+
+  .footer-md::before{
+    background-image: none;
+    border: none;
+  }
+
+  .item-md.item-block .item-inner{
+    border: none;
+    background-image: none;
+  }
+
+  .doktorRadio{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .iconRadio{
+    font-size: 50px !important;
+  }
 }

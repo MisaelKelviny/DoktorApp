@@ -1,25 +1,32 @@
+
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+import { Http, Response } from "@angular/http";
 
-/*
-  Generated class for the RadioProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class RadioProvider {
 
   url: string;
   stream: any;
+  musicName: any;
   promise: any;
+  radioStream: any = "http://sc15.shoutcaststreaming.us:8140/;listen.pls?sid=1";
 
-  constructor() {
-    // this.url = "http://akalmultimedia.net:8000/GDNSLDH";
-    // this.url = "https://tunein.com/embed/player/s283044/";
+  constructor(public http: HttpClient, public httpservice: Http) {
+    this.url = "http://live.hunter.fm/rock32";
+    // this.url = "http://sc15.shoutcaststreaming.us:8140/;listen.pls?sid=1"; 
+    // this.url = "https://control.internet-radio.com:2199/external/rpc.php?&m=streaminfo.get&username=xxxrock&charset=&mountpoint=&rid=xxxrock&_=1570761967406";
     this.stream = new Audio(this.url);
-    
   };
+
+  getRadio() {
+    return this.httpservice.get(this.url).map(res => res.json());
+  }
+
+  volume(value){
+    this.stream.volume = value;
+  }
 
   play() {
     this.stream.play();
@@ -32,7 +39,6 @@ export class RadioProvider {
         reject(false);
       });
     });
-
     return this.promise;
   };
 

@@ -13,22 +13,42 @@
       <ion-col>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col col-4>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button dark (click)="play()">
-          <ion-icon name="play"></ion-icon>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button dark (click)="pause()">
-          <ion-icon name="pause"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
   </ion-grid>
-  <ion-content class="home">
-  </ion-content>
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar margin-vertical>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <button class="doktorRadio" *ngIf="!toPlay" ion-button dark (click)="play()">
+            <ion-icon class="iconRadio" name="play"></ion-icon>
+          </button>
+          <button class="doktorRadio" *ngIf="toPlay" ion-button dark (click)="pause()">
+            <ion-icon class="iconRadio" *ngIf="toPlay" name="pause"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-center>
+        <ion-col col-10>
+          <ion-item>
+            <ion-range (ionChange)="setVolume(volume)" min="0" max="100" pin="true" step="10" [(ngModel)]="volume">
+              <ion-icon small range-left>
+                <i class="fa fa-volume-off"></i>
+              </ion-icon>
+              <ion-icon range-right name="volume-high">
+                  <i class="fa fa-volume-up"></i>
+              </ion-icon>
+            </ion-range>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <h4>{{artistName}}</h4>
+          <span>{{musicName}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
