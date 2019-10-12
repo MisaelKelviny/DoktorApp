@@ -31,17 +31,39 @@ page-radio {
     justify-content: center;
   }
 
-  .footer-md::before{
+  .footer-md::before {
     background-image: none;
     border: none;
   }
 
-  .item-md.item-block .item-inner{
+  .item-md.item-block .item-inner {
     border: none;
     background-image: none;
   }
 
-  .doktorRadio{
+  .range-md .range-knob-min.range-knob-min .range-knob {
+    background: black;
+  }
+  .range-md .range-bar-active {
+    background: black !important;
+  }
+  .range-ios .range-bar-active {
+    background: black !important;
+  }
+  .range-md .range-bar {
+    background: rgb(94, 94, 94);
+  }
+  .range-ios .range-bar {
+    background: rgb(94, 94, 94);
+  }
+  .range-md .range-knob {
+    background: black !important;
+  }
+  .range-md .range-knob {
+    background: black !important;
+  }
+
+  .doktorRadio {
     width: 100px;
     height: 100px;
     background-color: transparent;
@@ -54,7 +76,7 @@ page-radio {
     margin: 0 auto;
   }
 
-  .iconRadio{
+  .iconRadio {
     font-size: 50px !important;
   }
 }

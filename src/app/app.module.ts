@@ -24,6 +24,7 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { StarRatingModule } from 'ionic3-star-rating';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CreditoPageModule } from '../pages/credito/credito.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
@@ -57,6 +58,7 @@ export const firebaseConfig = {
     AcompanhamentoPageModule,
     QrcodePageModule,
     RadioPageModule,
+    CreditoPageModule,
     HttpClientModule, 
     RegistrationPageModule,
   ],

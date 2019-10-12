@@ -11,6 +11,7 @@ import { CervejeirosPage } from '../pages/cervejeiros/cervejeiros';
 import { AcompanhamentoPage } from '../pages/acompanhamento/acompanhamento';
 import { QrcodePage } from '../pages/qrcode/qrcode';
 import { RadioPage } from '../pages/radio/radio';
+import { CreditoPage } from '../pages/credito/credito';
 
 
 @Component({
@@ -40,7 +41,7 @@ export class MyApp {
       { title: 'Acompanhamentos', component: AcompanhamentoPage, icon: "pizza" },
       { title: 'QR-Code', component: QrcodePage, icon: "qr-scanner" },
       { title: 'Rádio', component: RadioPage, icon: "radio" },
-      { title: 'Créditos', component: QrcodePage, icon: "book" },
+      { title: 'Créditos', component: CreditoPage, icon: "book" },
     ];
   }
 

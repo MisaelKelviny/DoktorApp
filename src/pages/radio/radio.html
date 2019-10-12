@@ -20,22 +20,26 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-4>
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col col-4>
           <button class="doktorRadio" *ngIf="!toPlay" ion-button dark (click)="play()">
             <ion-icon class="iconRadio" name="play"></ion-icon>
+            <!-- <i class="iconRadio fa fa-play-circle"></i> -->
           </button>
           <button class="doktorRadio" *ngIf="toPlay" ion-button dark (click)="pause()">
             <ion-icon class="iconRadio" *ngIf="toPlay" name="pause"></ion-icon>
+            <!-- <i class="iconRadio fa fa-pause-circle"></i> -->
           </button>
         </ion-col>
+        <ion-col col-4></ion-col>
       </ion-row>
       <ion-row justify-content-center>
         <ion-col col-10>
           <ion-item>
             <ion-range (ionChange)="setVolume(volume)" min="0" max="100" pin="true" step="10" [(ngModel)]="volume">
-              <ion-icon small range-left>
-                <i class="fa fa-volume-off"></i>
-              </ion-icon>
+              <ion-icon small range-left name="volume-off"></ion-icon>
               <ion-icon range-right name="volume-high">
                   <i class="fa fa-volume-up"></i>
               </ion-icon>
