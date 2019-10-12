@@ -36,6 +36,22 @@ page-radio {
     border: none;
   }
 
+  .buttonsMusic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sideButtons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .f-30{
+    font-size: 30px;
+  }
+
   .item-md.item-block .item-inner {
     border: none;
     background-image: none;
@@ -73,7 +89,7 @@ page-radio {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0px 20px;
   }
 
   .iconRadio {

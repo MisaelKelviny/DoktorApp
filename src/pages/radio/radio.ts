@@ -13,6 +13,7 @@ export class RadioPage {
   toPlay: boolean = false;
   volume: any = 50;
   radioPlayer: any;
+  isPlaying: boolean;
   getData: string;
   musicName: string = "";
   artistName: string = "";
@@ -21,6 +22,16 @@ export class RadioPage {
   constructor(public load: LoadingProvider, public navCtrl: NavController, public navParams: NavParams, public players: RadioProvider) {
     this.player = players;
     this.updateName();
+  }
+
+  ionViewDidLeave(){
+    this.toPlay = true;
+  }
+
+  ionViewWillEnter(){
+    if(this.isPlaying){
+      this.toPlay = true;
+    }
   }
 
   ionViewDidEnter() {
@@ -36,10 +47,15 @@ export class RadioPage {
 
   play() {
     this.toPlay = !this.toPlay;
+    this.load.show();
+    this.players.stream.autoPlay = false;
     this.player.play().then(() => {
       console.log('Playing');
+      this.isPlaying = true;
+      this.load.hide();
     }).catch((error) => {
       console.log(error);
+      this.load.hide();
     })
   }
 
@@ -56,8 +72,6 @@ export class RadioPage {
         this.verify(data.data[0].track.title, data.data[0].track.artist);
       }, (error) => alert(error)
     );
-
-    console.log(this.getData);
   }
 
   verify(music, artist) {
