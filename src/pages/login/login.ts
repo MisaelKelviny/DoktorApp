@@ -57,7 +57,6 @@ export class LoginPage {
     }else{ 
       this.firebaseauth.auth.signInWithEmailAndPassword(this.login, this.passwd)
       .then((data) => {
-        console.log(data);
         this.navCtrl.setRoot(HomePage);
       })
       .catch((erro: any) => {
@@ -73,13 +72,11 @@ export class LoginPage {
 
     profileModal.onDidDismiss(data => {
       this.userName = data.user.email;
-      console.log(this.userName);
       this.cadastrarUsuario(data.mail, data.password);
     });
   }
 
   public cadastrarUsuario(login?: any, passwd?: any): void {
-    console.log(login, passwd);
     this.firebaseauth.auth.createUserWithEmailAndPassword(login, passwd)
       .then(() => {
         this.exibirToast('Usuário criado com sucesso');

@@ -15,10 +15,13 @@ page-radio {
   .toolbar-title-ios {
     color: black !important;
     font-weight: 800 !important;
-    position: absolute;
     text-align: center;
   }
   .item-md {
+    background-color: transparent !important;
+    padding: 0px;
+  }
+  .item-ios {
     background-color: transparent !important;
     padding: 0px;
   }
@@ -32,6 +35,10 @@ page-radio {
   }
 
   .footer-md::before {
+    background-image: none;
+    border: none;
+  }
+  .footer-ios::before {
     background-image: none;
     border: none;
   }
@@ -56,7 +63,17 @@ page-radio {
     border: none;
     background-image: none;
   }
+  .item-ios.item-block .item-inner {
+    border: none;
+    background-image: none;
+  }
 
+  .range-ios .range-knob-min.range-knob-min .range-knob {
+    background: black;
+  }
+  .range-ios .range-bar-active {
+    background: black !important;
+  }
   .range-md .range-knob-min.range-knob-min .range-knob {
     background: black;
   }
@@ -73,9 +90,9 @@ page-radio {
     background: rgb(94, 94, 94);
   }
   .range-md .range-knob {
-    background: black !important;
+    background: rgb(128, 124, 124) !important;
   }
-  .range-md .range-knob {
+  .range-ios .range-knob {
     background: black !important;
   }
 
@@ -90,6 +107,10 @@ page-radio {
     align-items: center;
     justify-content: center;
     margin: 0px 20px;
+  }
+
+  .footer-ios .toolbar-background-ios{
+    border-color: rgba(255, 255, 255, 0) !important; 
   }
 
   .iconRadio {

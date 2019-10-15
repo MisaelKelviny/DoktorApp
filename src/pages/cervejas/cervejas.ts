@@ -1,27 +1,24 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { ListPage } from '../list/list';
 import { CervejeirosPage } from '../cervejeiros/cervejeiros';
 import { AcompanhamentoPage } from '../acompanhamento/acompanhamento';
-
-/**
- * Generated class for the CervejasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
   selector: 'page-cervejas',
   templateUrl: 'cervejas.html',
 })
-export class CervejasPage {
+export class CervejasPage implements OnInit{
 
   @ViewChild('slides') slides: Slides;
   amargor: any = 0;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ngOnInit(){
+    // this.slides.lockSwipes(true)
   }
 
   ionViewDidLoad() {
@@ -29,15 +26,17 @@ export class CervejasPage {
   }
 
   next() {
-    this.slides.slideNext();
+    this.slides.slideNext()
+    this.amargor < 4 ? this.amargor++ : this.amargor;
   }
 
+
   prev() {
-    this.slides.slidePrev();
+    this.slides.slidePrev()
+    this.amargor >= 0 ? this.amargor-- : this.amargor;
   }
 
   setLabel(value){
-    console.log(value);
     this.slides.slideTo(value);
   }
 

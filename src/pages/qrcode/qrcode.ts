@@ -20,6 +20,10 @@ export class QrcodePage {
     this.scannedText = '';
   }
 
+  onClickCancel() {
+    this.navCtrl.pop();
+  }
+
   showCamera() {
     (window.document.querySelector('ion-app') as HTMLElement).classList.add('cameraView');
     console.log('Camera View: shown');
@@ -62,8 +66,8 @@ export class QrcodePage {
   }
 
   ionViewWillLeave() {
-    this.hideCamera();
-    this.stopScan();
+    // this.hideCamera();
+    // this.stopScan();
   }
 
   // ionViewDidEnter(){
