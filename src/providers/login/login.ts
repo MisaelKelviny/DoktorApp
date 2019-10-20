@@ -24,15 +24,13 @@ export class LoginProvider {
 				this.userEmail = authState.email;
 			}
 		});
-		// afAuth.authState.subscribe(user => {
-		// 	this.user = user;
-		// 	this.userEmail = user.email;
-		// });
 	}
 	signInWithEmail(credentials) {
 		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
 			credentials.password);
 	}
+
+	
 
 	signUp(credentials) {
 		return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);

@@ -16,9 +16,8 @@ export class CervejasPage implements OnInit{
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  
   ngOnInit(){
-    // this.slides.lockSwipes(true)
   }
 
   ionViewDidLoad() {
@@ -27,15 +26,16 @@ export class CervejasPage implements OnInit{
 
   next() {
     this.slides.slideNext()
-    this.amargor < 4 ? this.amargor++ : this.amargor;
   }
 
 
   prev() {
     this.slides.slidePrev()
-    this.amargor >= 0 ? this.amargor-- : this.amargor;
   }
 
+  setRange(event){
+    this.amargor = event.realIndex
+  }
   setLabel(value){
     this.slides.slideTo(value);
   }
