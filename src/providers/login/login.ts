@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth  } from 'angularfire2/auth';
 import { ToastController, NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 import * as firebase from 'firebase/app';
@@ -18,10 +18,16 @@ export class LoginProvider {
 	userEmail: any;
 
 	constructor(public afAuth: AngularFireAuth) {
-		afAuth.authState.subscribe(user => {
-			this.user = user;
-			this.userEmail = user.email;
+		afAuth.authState.subscribe((authState) => {
+			if (authState) {
+				this.user = authState
+				this.userEmail = authState.email;
+			}
 		});
+		// afAuth.authState.subscribe(user => {
+		// 	this.user = user;
+		// 	this.userEmail = user.email;
+		// });
 	}
 	signInWithEmail(credentials) {
 		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
