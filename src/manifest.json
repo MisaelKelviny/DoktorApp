@@ -1,8 +1,10 @@
 {
   "name": "DoktorApp",
   "short_name": "DoktorApp",
-  "start_url": "index.html",
+  "start_url": "/index.html",
   "display": "standalone",
+  "scope": "/",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "assets/imgs/brau192x192.png",

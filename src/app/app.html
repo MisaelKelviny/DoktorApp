@@ -10,8 +10,8 @@
       </button>
     </ion-list>
   </ion-content>
-
-  <div class="menu-footer" (click)="sair()">
+</ion-menu>
+<div class="menu-footer" (click)="sair()">
     <div class="menu-footer-icon">
       <ion-icon name="log-out"></ion-icon>
     </div>
@@ -19,7 +19,5 @@
       SAIR
     </div>
   </div>
-</ion-menu>
-
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

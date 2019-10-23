@@ -89,7 +89,8 @@ export class MyApp {
     });
   }
 
-  public sair(): void {
+  sair() {
+    console.log("sair")
     this.firebaseauth.auth.signOut()
       .then(() => {
         console.log("sair");        
