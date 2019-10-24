@@ -17,11 +17,10 @@ export class HomePage {
   public unsubscribeBackEvent: any;
 
   constructor(public navCtrl: NavController, public platform: Platform, public load: LoadingProvider) {
-    
+    this.load.hide();
   }
 
   ionViewDidEnter(){
-    this.load.hide();
   }
 
   ionViewDidLoad() {

@@ -25,6 +25,8 @@ import { StarRatingModule } from 'ionic3-star-rating';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CreditoPageModule } from '../pages/credito/credito.module';
+import { AuthService } from '../providers/login/auth';
+import { TestProvider } from '../providers/test/test';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
@@ -72,11 +74,13 @@ export const firebaseConfig = {
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
+    AuthService,
     LoadingProvider,
     RadioProvider,
     HTTP,
     QrScanProvider,
-    QRScanner
+    QRScanner,
+    TestProvider
   ]
 })
 export class AppModule { }

@@ -5,14 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { RegistrationPage } from '../registration/registration';
 import { HomePage } from '../home/home';
 import { LoadingProvider } from '../../providers/loading/loading';
-
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AuthService } from '../../providers/login/auth';
 
 @IonicPage()
 @Component({
@@ -36,36 +29,49 @@ export class LoginPage {
     public modal: ModalController,
     public load: LoadingProvider,
     public alertCtrl: AlertController,
-    public platform: Platform
+    public platform: Platform,
+    private authservice: AuthService
   ) {
   }
+  
+  ngOnInit() {
+    /*
+      If localstorage have user key, redirected to dashboard
+    */
+    if (localStorage.getItem('user')) {
+      this.navCtrl.setRoot(HomePage)
+    }
+  }
 
+  loginUser(){
+    
+  }
+
+  loginWithGoogle() {
+    this.load.show()
+    this.login = this.login.trim()
+    this.passwd = this.passwd.trim()
+
+    if(!this.validateEmail(this.login)){
+      this.load.hide()
+      this.presentAlert();
+    }else{
+      this.authservice.OnLogin(this.login, this.passwd).then((res)=>{
+        this.navCtrl.push(HomePage);
+      }).catch((erro) => {
+        this.presentAlert();
+        this.load.hide() 
+      })
+    }
+
+  }
 
 
   ionViewWillEnter() {
     this.load.hide();
   }
 
-  public LoginComEmail(): void {
-    this.load.show();
-    this.login = this.login.trim();
-    this.passwd = this.passwd.trim();
-
-    if(!this.validateEmail(this.login)){
-      this.presentAlert();
-      this.load.hide();
-    }else{ 
-      this.firebaseauth.auth.signInWithEmailAndPassword(this.login, this.passwd)
-      .then((data) => {
-        this.navCtrl.setRoot(HomePage);
-      })
-      .catch((erro: any) => {
-        this.load.hide();
-        this.exibirToast(erro);
-      });
-    }
-  }
-
+  
   register() {
     let profileModal = this.modal.create(RegistrationPage);
     profileModal.present();
@@ -102,7 +108,7 @@ export class LoginPage {
 
   presentAlert() {
     let alert = this.alertCtrl.create({
-      title: 'Email Inválido',
+      title: 'Email ou Senha Inválido',
       buttons: ['OK']
     });
     alert.present();

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, MenuController, Keyboard, App, Platform, AlertController } from 'ionic-angular';
+import { Nav, MenuController, Keyboard, App, Platform, AlertController, NavController } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -12,25 +12,29 @@ import { AcompanhamentoPage } from '../pages/acompanhamento/acompanhamento';
 import { QrcodePage } from '../pages/qrcode/qrcode';
 import { RadioPage } from '../pages/radio/radio';
 import { CreditoPage } from '../pages/credito/credito';
+import { User } from '../providers/login/user';
+import { AuthService } from '../providers/login/auth';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-
-  @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = LoginPage;
-
+  
+  @ViewChild('content') nav: NavController
+  public rootPage = LoginPage;
+  
+  user: User;
   pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public firebaseauth: AngularFireAuth,
+    public authservice: AuthService,
     public menuCtrl: MenuController,
     public app: App,
     public platform: Platform,
     public alertCtrl: AlertController,
     public load: LoadingProvider) {
+      this.getUserLoggedIn();
     this.initializeApp();
 
     this.pages = [
@@ -89,22 +93,30 @@ export class MyApp {
     });
   }
 
-  sair() {
-    console.log("sair")
-    this.firebaseauth.auth.signOut()
-      .then(() => {
-        console.log("sair");        
-        this.menuCtrl.close();
-        this.nav.setRoot(LoginPage);
-      })
-      .catch((erro: any) => {
-        console.log(erro);
-      });
+
+  ngOnInit() {
+    
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  getUserLoggedIn() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+  }
+
+  openPage(page){
+    this.nav.push(page.component);
+  }
+
+  logout() {
+    if(this.authservice.logout()){
+      this.menuCtrl.close()
+      this.nav.setRoot(LoginPage)
+      console.log("deu certo")
+    }else{
+      this.menuCtrl.close()
+      this.nav.setRoot(LoginPage)
+      console.log("nao deu certo")
+    }
+
+    console.log('Logged out');
   }
 }
