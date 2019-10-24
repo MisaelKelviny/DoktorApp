@@ -16,10 +16,10 @@
           </ion-range>
         </ion-item>
         <div class="titlesRange">
-          <span>BAIXO</span>
-          <span>MÉDIO</span>
-          <span>ALTO</span>
-          <span class="last">MUITO ALTO</span>
+          <span [ngClass]="amargor == 0 ? 'activeTab' : ''">BAIXO</span>
+          <span [ngClass]="amargor == 1 ? 'activeTab' : ''">MÉDIO</span>
+          <span [ngClass]="amargor == 2 ? 'activeTab' : ''">ALTO</span>
+          <span [ngClass]="amargor == 3 ? 'activeTab' : ''">MUITO ALTO</span>
         </div>
       </ion-col>
     </ion-row>
@@ -64,43 +64,19 @@
 
               </ion-col>
             </ion-row>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-row>
-              <ion-col col-6>
-                <img src="../../assets/imgs/soronaveia.png">
-              </ion-col>
-              <ion-col col-6 text-start>
-                <h2>SORO N'AVEIA</h2>
-                <p class="subtitle">SUMMER ALE</p>
-                <div>
-                  <p>Graduação: 5,3%</p>
-                </div>
-              </ion-col>
-            </ion-row>
             <ion-row>
               <ion-col>
-                <p text-justify class="size10">
-                  <strong>Características:</strong> Clara e dourada, a Soro N’Aveia é uma cerveja especial por conter
-                  adição de aveia aos
-                  grãos moídos de malte de cevada durante a fabricação. Apresenta um perfume levemente cítrico e um
-                  creme denso e persistente, formando um ótimo bigodinho após o gole. O nome inusitado faz referência ao
-                  seu corpo leve e suave, o que a torna uma ótima opção para refrescar os dias quentes.
-                </p>
-                <p text-justify class="size10">
-                  <strong>Temperatura ideal:</strong> 3 a 5º.
-                </p>
-                <p text-justify class="size10">
-                  <strong>Harmonização: </strong>Essa cerveja combina muito bem com feijoada, frituras de boteco e
-                  churrascos animados,
-                  na piscina ou na praia. Indicada para combater ziquiziras e gastchuras, afinal, há muitos momentos em
-                  que precisamos de um Soro N’Aveia para melhorar o nosso astral.
-                </p>
-                <p text-justify class="size10">
-                  <strong>Copo adequado:</strong> Caldereta
-                </p>
-
+                <div class="doktorFooter">
+                  <button #botao ion-button small color="light" (click)="openComprar()">
+                    COMPRAR
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openAcompanhamento()">
+                    ACOMPANHAMENTOS
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openCervejeiro()">
+                    CERVEJEIROS
+                  </button>
+                </div>
               </ion-col>
             </ion-row>
           </ion-slide>
@@ -108,38 +84,51 @@
           <ion-slide>
             <ion-row>
               <ion-col col-6>
-                <img src="../../assets/imgs/soronaveia.png">
+                <img src="../../assets/imgs/witamina.png">
               </ion-col>
               <ion-col col-6 text-start>
-                <h2>SORO N'AVEIA</h2>
-                <p class="subtitle">SUMMER ALE</p>
+                <h2>WITAMINA</h2>
+                <p class="subtitle">WITBIER</p>
                 <div>
-                  <p>Graduação: 5,3%</p>
+                  <p>Graduação: 5,0%</p>
                 </div>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col>
                 <p text-justify class="size10">
-                  <strong>Características:</strong> Clara e dourada, a Soro N’Aveia é uma cerveja especial por conter
-                  adição de aveia aos
-                  grãos moídos de malte de cevada durante a fabricação. Apresenta um perfume levemente cítrico e um
-                  creme denso e persistente, formando um ótimo bigodinho após o gole. O nome inusitado faz referência ao
-                  seu corpo leve e suave, o que a torna uma ótima opção para refrescar os dias quentes.
+                  <strong>Características:</strong> Voltada para o público que está se apaixonando por
+                  cervejas especiais, a WitAMina é uma cerveja suave, complexa e frutada, de coloração dourada e baixo
+                  teor alcoólico. Fabricada com a adição de vitamina C, casca de laranja, semente de coentro, camomila e
+                  erva cidreira, funciona como uma injeção de ânimo para o cansaço após dias estressantes, além
+                  acalentar a mente.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Temperatura ideal:</strong> 3 a 5º.
+                  <strong>Temperatura ideal:</strong> 6 a 10º.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Harmonização: </strong>Essa cerveja combina muito bem com feijoada, frituras de boteco e
-                  churrascos animados,
-                  na piscina ou na praia. Indicada para combater ziquiziras e gastchuras, afinal, há muitos momentos em
-                  que precisamos de um Soro N’Aveia para melhorar o nosso astral.
+                  <strong>Harmonização: </strong>ndicada para consumir com bacalhau, atum, salmão, mariscos, camarão,
+                  caranguejos, lagostas, sushis, sashimis, peixes e saladas bem temperadas.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Copo adequado:</strong> Caldereta
+                  <strong>Copo adequado:</strong> Tumbler
                 </p>
 
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="doktorFooter">
+                  <button #botao ion-button small color="light" (click)="openComprar()">
+                    COMPRAR
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openAcompanhamento()">
+                    ACOMPANHAMENTOS
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openCervejeiro()">
+                    CERVEJEIROS
+                  </button>
+                </div>
               </ion-col>
             </ion-row>
           </ion-slide>
@@ -147,38 +136,105 @@
           <ion-slide>
             <ion-row>
               <ion-col col-6>
-                <img src="../../assets/imgs/soronaveia.png">
+                <img src="../../assets/imgs/psicotipa.png">
               </ion-col>
               <ion-col col-6 text-start>
-                <h2>SORO N'AVEIA</h2>
-                <p class="subtitle">SUMMER ALE</p>
+                <h2>PSICOT'IPA</h2>
+                <p class="subtitle">AMERICAN IPA</p>
                 <div>
-                  <p>Graduação: 5,3%</p>
+                  <p>Graduação: 7,2%</p>
                 </div>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col>
                 <p text-justify class="size10">
-                  <strong>Características:</strong> Clara e dourada, a Soro N’Aveia é uma cerveja especial por conter
-                  adição de aveia aos
-                  grãos moídos de malte de cevada durante a fabricação. Apresenta um perfume levemente cítrico e um
-                  creme denso e persistente, formando um ótimo bigodinho após o gole. O nome inusitado faz referência ao
-                  seu corpo leve e suave, o que a torna uma ótima opção para refrescar os dias quentes.
+                  <strong>Características:</strong> Uma American IPA que dá gosto de beber. Fabricada com quatro lúpulos
+                  cítricos norte-americanos, a Psicót’IPA é uma cerveja de coloração âmbar, corpo alto (denso) e ótimo
+                  drinkability. Apresenta notas marcantes de malte, lúpulo acentuado e aromas de frutas cítricas que
+                  agradam os mais exigentes cervejeiros. Indicada para os psicóticos e psicóticas por lúpulo, como nós,
+                  da Doktor Bräu.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Temperatura ideal:</strong> 3 a 5º.
+                  <strong>Temperatura ideal:</strong> 6 a 10º.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Harmonização: </strong>Essa cerveja combina muito bem com feijoada, frituras de boteco e
-                  churrascos animados,
-                  na piscina ou na praia. Indicada para combater ziquiziras e gastchuras, afinal, há muitos momentos em
-                  que precisamos de um Soro N’Aveia para melhorar o nosso astral.
+                  <strong>Harmonização: </strong>Consumir juntamente com comidas tailandesas, indianas ou comidas
+                  caprichadas no Curry. Cai bem com pimenta, picles, bacon, cordeiro e carnes menos gordurosas. Por ser
+                  um estilo em alta, qualquer lugar com uma boa companhia é perfeito para tomar uma American IPA.
                 </p>
                 <p text-justify class="size10">
-                  <strong>Copo adequado:</strong> Caldereta
+                  <strong>Copo adequado:</strong> Pint
                 </p>
 
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="doktorFooter">
+                  <button #botao ion-button small color="light" (click)="openComprar()">
+                    COMPRAR
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openAcompanhamento()">
+                    ACOMPANHAMENTOS
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openCervejeiro()">
+                    CERVEJEIROS
+                  </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-row>
+              <ion-col col-6>
+                <img src="../../assets/imgs/anesthesipa.png">
+              </ion-col>
+              <ion-col col-6 text-start>
+                <h2>ANESTHES'IPA</h2>
+                <p class="subtitle">DOUBLE INDIA PALE ALE</p>
+                <div>
+                  <p>Graduação: 8.6%</p>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p text-justify class="size10">
+                  <strong>Características:</strong> A Anesthes’IPA é uma cerveja para os fortes. Os sintomas após o
+                  primeiro gole são um relaxamento geral do corpo e da mente, o que a torna um ótimo combatente para
+                  relaxar após dias pesados, canseira crônica e cacholas agitadas. Durante a experiência, percebem-se
+                  notas de lúpulos cítricos, maltes claros e agradável ecstasy. O final apresenta um retrogosto seco e
+                  amargo que chega ao subconsciente, aguçando todos os seus sentidos. Uma cerveja para aqueles que
+                  gostam de experiências intensas.
+                </p>
+                <p text-justify class="size10">
+                  <strong>Temperatura ideal:</strong> 6 a 10º.
+                </p>
+                <p text-justify class="size10">
+                  <strong>Harmonização: </strong>Consumir com fondue, pratos picantes e carnes suculentas. Perfeita para
+                  degustar em ambientes sofisticados, casas de campo ou nos melhores recintos imperiais e majestosos.
+                </p>
+                <p text-justify class="size10">
+                  <strong>Copo adequado:</strong> Taça Tulipa
+                </p>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="doktorFooter">
+                  <button #botao ion-button small color="light" (click)="openComprar()">
+                    COMPRAR
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openAcompanhamento()">
+                    ACOMPANHAMENTOS
+                  </button>
+                  <button #botao ion-button small color="light" (click)="openCervejeiro()">
+                    CERVEJEIROS
+                  </button>
+                </div>
               </ion-col>
             </ion-row>
           </ion-slide>
@@ -189,16 +245,3 @@
   </ion-grid>
 
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <button #botao ion-button small color="light" (click)="openComprar()">
-      COMPRAR
-    </button>
-    <button #botao ion-button small color="light" (click)="openAcompanhamento()">
-      ACOMPANHAMENTOS
-    </button>
-    <button #botao ion-button small color="light" (click)="openCervejeiro()">
-      CERVEJEIROS
-    </button>
-  </ion-toolbar>
-</ion-footer>

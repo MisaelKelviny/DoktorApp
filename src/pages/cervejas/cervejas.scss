@@ -20,20 +20,20 @@ page-cervejas {
   }
   .item-ios {
     background-color: transparent !important;
-    padding: 0px;
+    padding: 0 10px;
   }
   .item-ios.item-block .item-inner {
     border: none !important;
-    padding: 0px;
+    padding: 0 10px;
   }
 
   .item-md {
     background-color: transparent !important;
-    padding: 0px;
+    padding: 0 10px;
   }
   .item-md.item-block .item-inner {
     border: none !important;
-    padding: 0px;
+    padding: 0 10px;
   }
   .range-md .range-knob-min.range-knob-min .range-knob {
     background: url("../../assets/folhaRange.png") 100% 100% no-repeat;
@@ -125,8 +125,13 @@ page-cervejas {
     text-align: justify;
     justify-content: space-between;
     display: flex;
-    font-size: 12px;
+    font-size: 8px;
     font-weight: bold;
     align-items: center;
+  }
+
+  .activeTab{
+    font-size: 15px;
+    font-weight: 900;
   }
 }

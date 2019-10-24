@@ -25,8 +25,9 @@ export class RadioPage {
     this.updateName();
   }
 
-  ionViewDidLeave(){
-    this.toPlay = true;
+  ionViewWillLeave(){
+    this.toPlay = false;
+    this.pause();
   }
 
   ionViewWillEnter(){
