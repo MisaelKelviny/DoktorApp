@@ -25,6 +25,10 @@ page-radio {
     background-color: transparent !important;
     padding: 0px;
   }
+  .scroll-content{
+    display: flex !important;
+    align-items: center !important;
+  }
   .toolbar-content-md {
     display: flex;
     justify-content: center;
@@ -43,19 +47,19 @@ page-radio {
     border: none;
   }
 
-  .buttonsMusic{
+  .buttonsMusic {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .sideButtons{
+  .sideButtons {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
   }
 
-  .f-30{
+  .f-30 {
     font-size: 30px;
   }
 
@@ -109,11 +113,20 @@ page-radio {
     margin: 0px 20px;
   }
 
-  .footer-ios .toolbar-background-ios{
-    border-color: rgba(255, 255, 255, 0) !important; 
+  .footer-ios .toolbar-background-ios {
+    border-color: rgba(255, 255, 255, 0) !important;
   }
 
   .iconRadio {
     font-size: 50px !important;
+  }
+
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    background-image: url("../../assets/imgs/radioimage.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
   }
 }

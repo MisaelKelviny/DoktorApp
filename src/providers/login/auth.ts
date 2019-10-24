@@ -65,21 +65,6 @@ export class AuthService {
             .catch(error => {
                 console.log(error);
             });
-        // setCustomParameters host domain (hd)
-        /*
-            let provider = new firebase.auth.GoogleAuthProvider();
-            provider.addScope('email');
-            provider.setCustomParameters({
-              'hd':'domain.edu.mx'
-            });
-            this.afAuth.auth.signInWithPopup(provider)
-            .then((data)=>{
-              this.router.navigate(['/dashboard']);
-            })
-            .catch((error)=>{
-              console.log(error)
-            });
-          */
     }
 
     logout(): boolean {

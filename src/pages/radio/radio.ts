@@ -18,6 +18,7 @@ export class RadioPage {
   musicName: string = "";
   artistName: string = "";
   aux: boolean = false;
+  doktorImage = "../../assets/img/radioImage.png"
 
   constructor(public load: LoadingProvider, public navCtrl: NavController, public navParams: NavParams, public players: RadioProvider) {
     this.player = players;
@@ -37,7 +38,7 @@ export class RadioPage {
   ionViewDidEnter() {
     setInterval(() => {
       this.updateName();
-    }, 5000);
+    }, 10000);
   }
 
   setVolume(ev) {

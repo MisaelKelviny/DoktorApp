@@ -9,15 +9,15 @@
         {{p.title}}
       </button>
     </ion-list>
+    <div class="menu-footer" (click)="logout()">
+      <div class="menu-footer-icon">
+        <ion-icon name="log-out"></ion-icon>
+      </div>
+      <div class="menu-footer-text">
+        SAIR
+      </div>
+    </div>
   </ion-content>
 </ion-menu>
-<div class="menu-footer" (click)="logout()">
-  <div class="menu-footer-icon">
-    <ion-icon name="log-out"></ion-icon>
-  </div>
-  <div class="menu-footer-text">
-    SAIR
-  </div>
-</div>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

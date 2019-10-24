@@ -18,10 +18,12 @@ export class RadioProvider {
   // radioStream = "http://live.hunter.fm/rock32";
   
   constructor(public http: HttpClient, public httpservice: Http) {
-    this.radioStream  = "http://sc15.shoutcaststreaming.us:8140/stream?type=http&nocache=300701";
+    this.radioStream  = "http://us4.internet-radio.com:8069/stream";
     // this.url = "https://feed.tunein.com/profiles/s157559/nowPlaying?token=eyJwIjpmYWxzZSwidCI6IjIwMTktMTAtMTJUMDI6MzI6MjkuOTA4MTA4NloifQ&itemToken=BgUFAAAAAAAAAAAAAAABd2cCAAEFAXdnAgABd2cCAA&formats=mp3,aac,ogg,flash&serial=01b140e8-a1de-48b2-b934-0a303cd46d98&partnerId=qZjjnm85&version=0.32&itemUrlScheme=secure&mode=embed&reqAttempt=1";
-    // this.url = "http://sc15.shoutcaststreaming.us:8140/;listen.pls?sid=1"; 
-    this.url = "https://control.internet-radio.com:2199/external/rpc.php?&m=streaminfo.get&username=xxxrock&charset=&mountpoint=&rid=xxxrock&_=1570761967406";
+    // this.radioStream = "http://sc15.shoutcaststreaming.us:8140/;listen.pls?sid=1"; 
+    // this.url = "https://control.internet-radio.com:2199/external/rpc.php?&m=streaminfo.get&username=xxxrock&charset=&mountpoint=&rid=xxxrock&_=1570761967406";
+    this.url = "https://control.internet-radio.com:2199/external/rpc.php?&m=streaminfo.get&username=radiofreemmo&charset=&mountpoint=&rid=radiofreemmo&_=1571885188524";
+    
     this.stream = new Audio(this.radioStream);
   };
 
