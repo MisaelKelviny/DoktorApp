@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the CreditoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-credito',
@@ -20,6 +13,10 @@ export class CreditoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreditoPage');
+  }
+
+  onClickCancel() {
+    this.navCtrl.pop();
   }
 
 }

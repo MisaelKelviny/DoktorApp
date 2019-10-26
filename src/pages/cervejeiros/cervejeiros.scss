@@ -18,7 +18,7 @@ page-cervejeiros {
     margin-bottom: 10px !important;
     border-radius: 20px;
   }
-  .d-inline{
+  .d-inline {
     display: inline;
   }
 
@@ -35,10 +35,20 @@ page-cervejeiros {
     color: blue;
   }
   .beerStar {
-    width: 100% !important;
+    max-width: 201% !important;
+    width: 140% !important;
     height: 200px !important;
     background: transparent;
+    margin-left: -20px;
     background-position: center;
   }
+  .swiper-slide {
+    overflow-y: scroll;
+    display: block;
+  }
 
+  h1{
+    font-weight: bolder;
+    font-size: 4rem;
+  }
 }

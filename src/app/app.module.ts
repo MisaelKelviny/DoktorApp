@@ -27,11 +27,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CreditoPageModule } from '../pages/credito/credito.module';
 import { AuthService } from '../providers/login/auth';
 import { TestProvider } from '../providers/test/test';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",
   authDomain: "doktorpwa.firebaseapp.com",
-  databaseURL: "https://doktorpwa.firebaseio.com//user/En44gJngeFAqHmDapDcA",
+  databaseURL: "https://doktorpwa.firebaseio.com",
   projectId: "doktorpwa",
   storageBucket: "doktorpwa.appspot.com",
   messagingSenderId: "281372735697",
@@ -61,7 +62,8 @@ export const firebaseConfig = {
     QrcodePageModule,
     RadioPageModule,
     CreditoPageModule,
-    HttpClientModule, 
+    HttpClientModule,
+    AngularFireDatabaseModule,
     RegistrationPageModule,
   ],
   bootstrap: [IonicApp],

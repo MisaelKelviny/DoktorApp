@@ -26,7 +26,9 @@ page-cervejas {
     border: none !important;
     padding: 0 10px;
   }
-
+  .we-none {
+    white-space: nowrap;
+  }
   .item-md {
     background-color: transparent !important;
     padding: 0 10px;
@@ -53,10 +55,10 @@ page-cervejas {
     width: 35px;
     height: 35px;
   }
-  .range-md .range-bar{
+  .range-md .range-bar {
     background: white;
   }
-  .range-ios .range-bar{
+  .range-ios .range-bar {
     background: white;
   }
   .subtitle {
@@ -130,7 +132,7 @@ page-cervejas {
     align-items: center;
   }
 
-  .activeTab{
+  .activeTab {
     font-size: 15px;
     font-weight: 900;
   }

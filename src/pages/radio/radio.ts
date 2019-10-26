@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RadioProvider } from '../../providers/radio/radio';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { LoginProvider } from '../../providers/login/login';
 
 @IonicPage()
 @Component({
@@ -19,10 +20,12 @@ export class RadioPage {
   artistName: string = "";
   aux: boolean = false;
   doktorImage = "../../assets/img/radioImage.png"
+  
 
-  constructor(public load: LoadingProvider, public navCtrl: NavController, public navParams: NavParams, public players: RadioProvider) {
+  constructor(public user: LoginProvider, public load: LoadingProvider, public navCtrl: NavController, public navParams: NavParams, public players: RadioProvider) {
     this.player = players;
     this.updateName();
+   
   }
 
   ionViewWillLeave(){
@@ -68,12 +71,12 @@ export class RadioPage {
   }
 
   updateName() {
-    this.players.getRadio().subscribe(
-      (data) => {
-        this.getData = data;
-        this.verify(data.data[0].track.title, data.data[0].track.artist);
-      }, (error) => alert(error)
-    );
+    // this.players.getRadio().subscribe(
+    //   (data) => {
+    //     this.getData = data;
+    //     this.verify(data.data[0].track.title, data.data[0].track.artist);
+    //   }, (error) => alert(error)
+    // );
   }
 
   verify(music, artist) {

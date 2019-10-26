@@ -48,4 +48,8 @@ page-acompanhamento {
     align-items: end;
     text-align: end;
   }
+  .swiper-slide{
+    overflow-y: scroll;
+    display: block;
+  }
 }

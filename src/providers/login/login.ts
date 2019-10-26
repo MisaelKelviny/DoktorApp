@@ -1,8 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireAuth  } from 'angularfire2/auth';
-import { ToastController, NavController } from 'ionic-angular';
-import { HomePage } from '../../pages/home/home';
 import * as firebase from 'firebase/app';
 import AuthProvider = firebase.auth.AuthProvider;
 import { User } from './user';

@@ -20,6 +20,9 @@ export class LoginPage {
   passwd: string = "";
   login: string = "";
   userName: string = "";
+  showBtn: boolean = false;
+  deferredPrompt;
+  private _userLogged: any;
 
   constructor(
     public navCtrl: NavController,
@@ -33,7 +36,7 @@ export class LoginPage {
     private authservice: AuthService
   ) {
   }
-  
+
   ngOnInit() {
     /*
       If localstorage have user key, redirected to dashboard
@@ -43,41 +46,41 @@ export class LoginPage {
     }
   }
 
-  loginUser(){
-    
+  public get userLogged(): any {
+    return this._userLogged;
   }
+  public set userLogged(value: any) {
+    this._userLogged = value;
+  }
+
+
 
   loginWithGoogle() {
     this.load.show()
     this.login = this.login.trim()
     this.passwd = this.passwd.trim()
 
-    if(!this.validateEmail(this.login)){
+    if (!this.validateEmail(this.login)) {
       this.load.hide()
       this.presentAlert();
-    }else{
-      this.authservice.OnLogin(this.login, this.passwd).then((res)=>{
+    } else {
+      this.authservice.OnLogin(this.login, this.passwd).then((res) => {
         this.navCtrl.push(HomePage);
       }).catch((erro) => {
         this.presentAlert();
-        this.load.hide() 
+        this.load.hide()
       })
     }
 
   }
 
-
-  ionViewWillEnter() {
-    this.load.hide();
-  }
-
-  
   register() {
     let profileModal = this.modal.create(RegistrationPage);
     profileModal.present();
 
     profileModal.onDidDismiss(data => {
-      this.userName = data.user.email;
+      console.log(data);
+      this.userName = data.mail;
       this.cadastrarUsuario(data.mail, data.password);
     });
   }
@@ -113,4 +116,46 @@ export class LoginPage {
     });
     alert.present();
   }
+
+
+  ionViewWillEnter() {
+    this.load.hide();
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later on the button event.
+      this.deferredPrompt = e;
+
+      // Update UI by showing a button to notify the user they can add to home screen
+      this.showBtn = true;
+    });
+
+    //button click event to show the promt
+
+    window.addEventListener('appinstalled', (event) => {
+      console.log('installed');
+    });
+
+
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      console.log('display-mode is standalone');
+    }
+  }
+
+  add_to_home(e) {
+    // hide our user interface that shows our button
+    // Show the prompt
+    this.deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    this.deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the prompt');
+        } else {
+          console.log('User dismissed the prompt');
+        }
+        this.deferredPrompt = null;
+      });
+  };
+
 }

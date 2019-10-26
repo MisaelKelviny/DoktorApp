@@ -3,37 +3,37 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-navbar hideBackButton>
-    <ion-searchbar  id="searchbar" class="searchBarDoktor" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-searchbar id="searchbar" class="searchBarDoktor" (ionInput)="getItems($event)"></ion-searchbar>
   </ion-navbar>
-  <h1 text-center>Cervejeiros</h1>
+  <h1 text-center>CERVEJEIROS</h1>
 </ion-header>
 
 
 <ion-content>
-  <ion-slides>
-    <ion-slide class="d-inline" *ngFor="let com of data;let i = index">
+  <ion-slides (ionSlideWillChange)="indexNow($event)" >
+    <ion-slide #slide (ionSlideDidChange)="indexNow($event)" class="d-inline swiper-slide" *ngFor="let com of data.item;let i = index">
       <ion-grid>
         <ion-row>
           <ion-col col-4>
-            <ion-img class="beerStar" [src]="com.beerUrl"></ion-img>
+            <img class="beerStar" src="{{com.beerUrl}}">
           </ion-col>
           <ion-col col-8 justify-content-start text-left>
             <h3>{{com.name}}</h3>
             <div>
-              <div>
-                <ion-icon *ngFor="let item of [].constructor(com.rating);" name="star"></ion-icon>
-              </div>
-              <div>
-                <p *ngIf="com.rating == 1">BOM</p>
-                <p *ngIf="com.rating == 2">MUITO BOM</p>
-                <p *ngIf="com.rating == 3">GOSTEI</p>
-                <p *ngIf="com.rating == 4">GOSTEI MUITO</p>
-                <p *ngIf="com.rating == 5">EXCELENTE</p>
-              </div>
-              <div>
+              <div *ngFor="let j of com.userComment;" margin-vertical>
+                <div>
+                  <ion-icon *ngFor="let item of [].constructor(j.rating);" name="star"></ion-icon>
+                </div>
+                <div>
+                  <p *ngIf="j.rating == 1">BOM</p>
+                  <p *ngIf="j.rating == 2">MUITO BOM</p>
+                  <p *ngIf="j.rating == 3">GOSTEI</p>
+                  <p *ngIf="j.rating == 4">GOSTEI MUITO</p>
+                  <p *ngIf="j.rating == 5">EXCELENTE</p>
+                </div>
                 <small>
                   <ion-icon name="chatbubbles" color="light"></ion-icon>
-                  <strong>{{com.username}}</strong> {{com.userComment}}
+                  <strong>{{j.username}}</strong> {{j.coment}}
                 </small>
               </div>
             </div>
@@ -54,9 +54,9 @@
       </ionic3-star-rating>
     </div>
     <ion-item class="w-80 mb-10">
-      <ion-textarea type="text" placeholder="Deixe seu comentário" [(ngModel)]="coment"></ion-textarea>
+      <ion-textarea rows="1" type="text" placeholder="Deixe seu comentário" [(ngModel)]="coment"></ion-textarea>
     </ion-item>
-    <ion-fab bottom right>
+    <ion-fab bottom right (click)="enviar(coment)">
       <button ion-fab color="secondary">
         <ion-icon name="paper-plane"></ion-icon>
       </button>

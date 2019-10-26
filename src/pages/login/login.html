@@ -39,7 +39,7 @@
         </ion-row>
         <ion-row align-items-center>
           <ion-col col-12 text-center justify-content-center align-self-center>
-            <button (click)="loginWithGoogle()" color="secondary" round ion-button>
+            <button (click)="loginWithGoogle()" color="secondary" round ion-button full>
               ENTRAR
             </button>
           </ion-col>
@@ -61,8 +61,8 @@
             </div>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col col-12>
+        <ion-row margin-vertical>
+          <ion-col col-12 >
             <div text-center class="forgotPassword">
               ESQUECI MINHA SENHA
             </div>
@@ -70,6 +70,12 @@
         </ion-row>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <div>
+          <button class="btn" ion-button full (click)="add_to_home(event)" *ngIf="showBtn">Instalar Aplicativo</button>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-
 </ion-content>
