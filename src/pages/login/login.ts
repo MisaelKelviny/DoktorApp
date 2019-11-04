@@ -121,7 +121,7 @@ export class LoginPage {
   ionViewWillEnter() {
     this.load.hide();
     window.addEventListener('beforeinstallprompt', (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       this.add_to_home(e)
       this.deferredPrompt = e;
       this.showBtn = true;
