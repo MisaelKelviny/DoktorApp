@@ -25,7 +25,14 @@ export class RegistrationPage {
 		if (!this.validateEmail(mail)) {
 			this.presentAlert()
 		} else {
-			this.viewCtrl.dismiss({ mail: mail, password: password });
+			if (mail == '') {
+				mail = ""
+			} if (password == '') {
+				password = ""
+			}
+			else {
+				this.viewCtrl.dismiss({ mail: mail, password: password });
+			}
 		}
 	}
 
@@ -35,5 +42,9 @@ export class RegistrationPage {
 			buttons: ['OK']
 		});
 		alert.present();
+	}
+
+	onClickCancel() {
+		this.navCtrl.pop();
 	}
 }

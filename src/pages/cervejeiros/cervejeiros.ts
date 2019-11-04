@@ -1,5 +1,5 @@
 import { Component, ViewChild, NgZone } from '@angular/core';
-import { IonicPage, NavController, NavParams, Thumbnail, Slides, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Thumbnail, Slides, Events, Content } from 'ionic-angular';
 import { LoginProvider } from '../../providers/login/login';
 import { compareDates } from 'ionic-angular/umd/util/datetime-util';
 import { TestProvider } from '../../providers/test/test';
@@ -14,9 +14,10 @@ import { LoadingProvider } from '../../providers/loading/loading';
 })
 export class CervejeirosPage {
   
+  @ViewChild(Content) content: Content;
   @ViewChild('slide') slides: Slides;
   private PATH = '/comments';
-  stars: any;
+  stars: any = 3;
   indexOfSlide: any = 0;
   coment: any = "";
   dataComment: any;
@@ -148,6 +149,7 @@ export class CervejeirosPage {
   }
 
   enviar(coment) {
+    this.content.scrollToBottom()
     var indexAgora = this.indexOfSlide;
     let comentario = {
       username: this.getBeforePlus(this.user.email),
@@ -164,6 +166,7 @@ export class CervejeirosPage {
         })
       }
     })
+    this.coment = ""
     localStorage.setItem("comentario", JSON.stringify(this.data));
   }
 

@@ -9,7 +9,8 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit"
   },
   "config": {
     "ionic_copy": "node_modules/@ionic/app-scripts/config/copy.config.js",
@@ -46,7 +47,9 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.2.4",
-    "typescript": "~2.6.2"
+    "typescript": "~2.6.2",
+    "increase-memory-limit": "^1.0.3",
+    "cross-env": "^5.0.5"
   },
   "description": "An Ionic project",
   "cordova": {
