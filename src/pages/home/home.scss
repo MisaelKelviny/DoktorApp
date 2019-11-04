@@ -17,35 +17,50 @@ page-home {
     scroll-behavior: unset;
     overflow: hidden;
   }
-  
-  .firstAbove{
+
+  .firstAbove {
     transform: translate(0px, 30px);
   }
 
-  .centerAbove{
+  .centerAbove {
     transform: translate(0px, 30px);
   }
 
-  .downAbove{
+  .downAbove {
     transform: translate(0px, -30px);
   }
 
-  ion-grid{
+  ion-grid {
     height: 100% !important;
     justify-content: center;
     overflow: hidden;
   }
 
-  .tampa{
-      width: 80px;
-      align-self: center;
-      display: flex;
-      margin: 0 auto;
-  }
-  .tampao{
-    width: 120px;
+  .tampa {
+    width: 80px;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    max-width: 80px !important;
+    max-width: 80px !important;
+    flex-shrink: 0;
     align-self: center;
     display: flex;
     margin: 0 auto;
+  }
+  .tampao {
+    width: 120px;
+    min-height: 120px !important;
+    max-height: 120px !important;
+    max-width: 120px !important;
+    max-width: 120px !important;
+    align-self: center;
+    flex-shrink: 0;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  img {
+    object-fit: cover;
+    align-self: flex-start !important;
   }
 }
