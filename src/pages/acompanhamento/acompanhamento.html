@@ -3,7 +3,7 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-navbar hideBackButton>
-    <ion-searchbar class="searchBarDoktor" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-searchbar class="searchBarDoktor"></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
       <!-- <img src="../../assets/imgs/carneCordeiro.jpg"> -->
       <div class="bannerReceita"></div>
       <div class="see">
-        <button ion-button color="light">VER RECEITA</button>
+        <button ion-button color="light" (click)="verReceita()">VER RECEITA</button>
       </div>
       <div class="arrow"></div>
       <ion-grid>

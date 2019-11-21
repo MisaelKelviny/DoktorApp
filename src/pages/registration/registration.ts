@@ -31,7 +31,7 @@ export class RegistrationPage {
 				password = ""
 			}
 			else {
-				this.viewCtrl.dismiss({ mail: mail, password: password });
+				this.viewCtrl.dismiss({ mail: mail != "" ? mail : "", password: password != "" ? password : "" });
 			}
 		}
 	}

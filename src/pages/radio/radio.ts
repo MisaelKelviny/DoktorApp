@@ -33,6 +33,15 @@ export class RadioPage {
     this.pause();
   }
 
+  next(){
+    this.player.pause();
+    this.load.show().then(()=>{
+      this.player.next();
+      this.player.play();
+    })
+    this.load.hide();
+  }
+
   ionViewWillEnter(){
     if(this.isPlaying){
       this.toPlay = true;

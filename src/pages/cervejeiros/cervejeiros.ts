@@ -13,7 +13,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
   templateUrl: 'cervejeiros.html',
 })
 export class CervejeirosPage {
-  
+
   @ViewChild(Content) content: Content;
   @ViewChild('slide') slides: Slides;
   private PATH = '/comments';
@@ -79,11 +79,8 @@ export class CervejeirosPage {
         userComment: [
           { coment: "O amargor na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 3 },
           { coment: "O nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 3 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
+          { coment: "Melhor cerveja que já pude experimentar #amelhorcerveja", username: "HelderFernandes", rating: 4 },
+          { coment: "Muito bom #amelhorcerveja", username: "HelderFernandes", rating: 4 },
         ],
       },
       {
@@ -91,15 +88,16 @@ export class CervejeirosPage {
         beerUrl: "../../assets/garrafa-nocturia-min.png",
         userComment: [
           { coment: "O amargor na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 3 },
-          { coment: "O sai do nada na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
+          { coment: "Na dosagem certa #amelhorcerveja", username: "HelderFernandes", rating: 4 },
         ],
       },
       {
         name: "ALBINUS",
         beerUrl: "../../assets/garrafa-albinus-min.png",
         userComment: [
-          {}
-        ],
+          { coment: "Muito Bom mesmo a cerveja Albinus", username: "user", rating: 5 },
+          { coment: "#amelhorcerveja", username: "joao.oliveira", rating: 5 },
+        ]
       },
       {
         name: "TOC",

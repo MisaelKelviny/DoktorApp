@@ -22,14 +22,14 @@
       <ion-row>
         <ion-col col-12 align-self-center>
           <div class="buttonsMusic">
-            <i class="sideButtons fa fa-2x fa-step-backward"></i>
+            <i class="sideButtons fa fa-2x fa-step-backward" (click)="next()"></i>
             <button class="doktorRadio" *ngIf="!toPlay" ion-button dark (click)="play()">
               <ion-icon class="iconRadio" name="play"></ion-icon>
             </button>
             <button class="doktorRadio" *ngIf="toPlay" ion-button dark (click)="pause()">
               <ion-icon class="iconRadio" *ngIf="toPlay" name="pause"></ion-icon>
             </button>
-            <i class="fa fa-2x fa-step-forward"></i>
+            <i class="fa fa-2x fa-step-forward" (click)="next()"></i>
           </div>
         </ion-col>
       </ion-row>

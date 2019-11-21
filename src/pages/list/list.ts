@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { LoadingProvider } from '../../providers/loading/loading';
 
 @Component({
@@ -82,13 +82,26 @@ export class ListPage {
     },
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public load: LoadingProvider) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public load: LoadingProvider) {
       this.aux = this.doktorBeer
   }
 
   ngOnInit() {
   }
 
+
+  buy(){
+    this.presentAlert()
+  }
+
+  presentAlert() {
+		let alert = this.alertCtrl.create({
+      title: 'Compra Realizada',
+      message: 'Compra efetuada com sucesso!',
+			buttons: ['OK']
+		});
+		alert.present();
+	}
 
   getItems(ev){
     const val = ev.target.value;

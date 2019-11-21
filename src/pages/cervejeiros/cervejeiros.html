@@ -20,8 +20,8 @@
           <ion-col col-8 justify-content-start text-left>
             <h3>{{com.name}}</h3>
             <div>
-              <div *ngFor="let j of com.userComment;" margin-vertical>
-                <div>
+              <div *ngFor="let j of com.userComment;" margin-vertical >
+                <div *ngIf="j.rating !== 0">
                   <ion-icon *ngFor="let item of [].constructor(j.rating);" name="star"></ion-icon>
                 </div>
                 <div>

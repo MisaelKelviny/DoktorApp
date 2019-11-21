@@ -22,4 +22,7 @@ export class AcompanhamentoPage {
     console.log('ionViewDidLoad AcompanhamentoPage');
   }
 
+  verReceita(){
+    
+  }
 }
