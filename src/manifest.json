@@ -3,9 +3,8 @@
   "short_name": "Doktor",
   "theme_color": "#d8c32c",
   "background_color": "#d8c32c",
+  "start_url": "index.html",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "./index.html",
   "icons": [
     {
       "src": "assets/images/icons/icon-72x72.png",
@@ -47,6 +46,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }

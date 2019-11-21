@@ -27,7 +27,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CreditoPageModule } from '../pages/credito/credito.module';
 import { AuthService } from '../providers/login/auth';
 import { TestProvider } from '../providers/test/test';
-import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBdoKnXX4CqTb6xgEJpScYXscizbOV7jHA",

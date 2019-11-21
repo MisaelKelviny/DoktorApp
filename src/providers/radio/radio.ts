@@ -12,7 +12,7 @@ export class RadioProvider {
   stream: any;
   musicName: any;
   promise: any;
-  radioStream = ["http://live.hunter.fm/rock32", "https://servidor29-3.brlogic.com:8586/live", "https://live.hunter.fm/pop2k32"];
+  radioStream = ["http://live.hunter.fm/rock32", "http://live.hunter.fm/hitz32", "https://live.hunter.fm/pop2k32"];
   user: User
   
   constructor(public http: HttpClient, public httpservice: Http) {

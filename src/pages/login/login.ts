@@ -120,33 +120,32 @@ export class LoginPage {
 
   ionViewWillEnter() {
     this.load.hide();
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      this.add_to_home(e)
-      this.deferredPrompt = e;
-      this.showBtn = true;
-    });
-    window.addEventListener('appinstalled', (event) => {
-      console.log('installed');
-    });
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      console.log('display-mode is standalone');
-    }
+    // window.addEventListener('beforeinstallprompt', (e) => {
+    //   e.preventDefault();
+    //   this.add_to_home(e)
+    //   this.deferredPrompt = e;
+    // });
+    // window.addEventListener('appinstalled', (event) => {
+    //   console.log('installed');
+    // });
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   console.log('display-mode is standalone');
+    // }
   }
 
   add_to_home(e) {
-    if(this.deferredPrompt){
-      this.deferredPrompt.prompt();
-    }
-    this.deferredPrompt.userChoice
-      .then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the prompt');
-        } else {
-          console.log('User dismissed the prompt');
-        }
-        this.deferredPrompt = null;
-      });
-  };
+    // if(this.deferredPrompt){
+    //   this.deferredPrompt.prompt();
+    // }
+    // this.deferredPrompt.userChoice
+    //   .then((choiceResult) => {
+    //     if (choiceResult.outcome === 'accepted') {
+    //       console.log('User accepted the prompt');
+    //     } else {
+    //       console.log('User dismissed the prompt');
+    //     }
+    //     this.deferredPrompt = null;
+    //   });
+  }
 
 }

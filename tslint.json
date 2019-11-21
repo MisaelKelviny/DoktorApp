@@ -1,8 +1,8 @@
 {
   "rules": {
-    "no-duplicate-variable": false,
+    "no-duplicate-variable": true,
     "no-unused-variable": [
-      false
+      true
     ]
   },
   "rulesDirectory": [
