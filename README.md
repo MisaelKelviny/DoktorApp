@@ -4,7 +4,8 @@
 # DoktorApp
 
 Project created by students of the Advertising and Propaganda and Application course and Developed by a 
-student of the Information Systems course
+student of the Information Systems course.
+Available on: [DoktorApp](https://doktorpwa.web.app/)
 
 ## Technologies
 
